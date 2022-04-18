@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: none-attack
+    tty: true
+    ports:
+      - 5555:5555
+    volumes:
+      - ./:/go/src

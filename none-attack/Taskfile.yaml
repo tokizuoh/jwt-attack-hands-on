@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - docker-compose up --build -d
+  up:
+    cmds:
+      - docker-compose up -d
+  rbuild:
+    cmds:
+      - task stop
+      - task build
+  stop:
+    cmds:
+      - docker stop none-attack
+  e:
+    cmds:
+      - docker exec -it none-attack sh
+  run:
+    cmds:
+      - docker-compose exec app go run main.go
